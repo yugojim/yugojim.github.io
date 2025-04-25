@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數據分析互動流程圖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .step-box {
+      transition: transform 0.3s ease;
+    }
+    .step-box:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-10">📊 數據分析流程圖（互動式）</h1>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
+      <div class="step-box cursor-pointer p-4 rounded-lg bg-blue-700" onclick="showDetail(1)">
+        <div class="text-2xl font-bold mb-2">1️⃣ 資料收集</div>
+        <div class="text-sm text-gray-300">收集內部/外部原始資料</div>
+      </div>
+      <div class="step-box cursor-pointer p-4 rounded-lg bg-purple-700" onclick="showDetail(2)">
+        <div class="text-2xl font-bold mb-2">2️⃣ 資料清理</div>
+        <div class="text-sm text-gray-300">缺失值處理與標準化</div>
+      </div>
+      <div class="step-box cursor-pointer p-4 rounded-lg bg-green-700" onclick="showDetail(3)">
+        <div class="text-2xl font-bold mb-2">3️⃣ 資料分析</div>
+        <div class="text-sm text-gray-300">統計分析與視覺化</div>
+      </div>
+      <div class="step-box cursor-pointer p-4 rounded-lg bg-yellow-600" onclick="showDetail(4)">
+        <div class="text-2xl font-bold mb-2">4️⃣ 建模預測</div>
+        <div class="text-sm text-gray-300">機器學習/AI 模型訓練</div>
+      </div>
+      <div class="step-box cursor-pointer p-4 rounded-lg bg-red-600" onclick="showDetail(5)">
+        <div class="text-2xl font-bold mb-2">5️⃣ 解讀與報告</div>
+        <div class="text-sm text-gray-300">結果解釋與商業應用</div>
+      </div>
+    </div>
+
+    <div id="detail" class="mt-12 bg-gray-800 p-6 rounded-lg shadow-lg hidden">
+      <h2 id="step-title" class="text-2xl font-bold mb-2"></h2>
+      <p id="step-desc" class="text-gray-300"></p>
+    </div>
+  </div>
+
+  <script>
+    const steps = {
+      1: {
+        title: "資料收集 (Data Collection)",
+        desc: "從內部系統、外部資料源（如 API、網頁爬蟲、開放資料集）收集原始資料，建立資料湖或資料倉儲。"
+      },
+      2: {
+        title: "資料清理 (Data Cleaning)",
+        desc: "處理遺失值、異常值、資料格式不一致問題。使用 pandas、OpenRefine 等工具清理資料。"
+      },
+      3: {
+        title: "資料分析 (Data Analysis)",
+        desc: "透過統計方法、關聯分析或視覺化工具（如 Power BI、Tableau）探索資料特徵與關係。"
+      },
+      4: {
+        title: "建模預測 (Modeling & Prediction)",
+        desc: "利用機器學習模型（如線性迴歸、決策樹、神經網路）建構預測模型，並進行交叉驗證與調參。"
+      },
+      5: {
+        title: "解讀與報告 (Interpretation & Reporting)",
+        desc: "將分析結果視覺化，撰寫簡報或報告，並向利害關係人呈現，支持決策。"
+      }
+    };
+
+    function showDetail(step) {
+      const detailBox = document.getElementById('detail');
+      const title = document.getElementById('step-title');
+      const desc = document.getElementById('step-desc');
+      title.textContent = steps[step].title;
+      desc.textContent = steps[step].desc;
+      detailBox.classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>互動式儀錶板示範</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 1.5em;
+    }
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: #e0e0e0;
+    }
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .chart {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .chart h3 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>中文互動式儀錶板展示</header>
+  <div class="controls">
+    <label for="monthSelector">選擇月份：</label>
+    <select id="monthSelector">
+      <option value="1">1月</option>
+      <option value="2">2月</option>
+      <option value="3">3月</option>
+      <option value="4">4月</option>
+      <option value="5">5月</option>
+    </select>
+  </div>
+  <div class="dashboard">
+    <div class="chart"><h3>1. 折線圖 - 銷售趨勢</h3><div id="lineChart"></div></div>
+    <div class="chart"><h3>2. 長條圖 - 地區業績</h3><div id="barChart"></div></div>
+    <div class="chart"><h3>3. 圓餅圖 - 市場佔有率</h3><div id="pieChart"></div></div>
+    <div class="chart"><h3>4. 散點圖 - 顧客分布</h3><div id="scatterChart"></div></div>
+    <div class="chart"><h3>5. 氣泡圖 - 商品銷售</h3><div id="bubbleChart"></div></div>
+    <div class="chart"><h3>6. 雷達圖 - KPI 評估</h3><div id="radarChart"></div></div>
+    <div class="chart"><h3>7. 箱型圖 - 價格分布</h3><div id="boxChart"></div></div>
+    <div class="chart"><h3>8. 面積圖 - 營收成長</h3><div id="areaChart"></div></div>
+  </div>
+  <script>
+    const monthlyData = {
+      1: {line: [100,120,150,130,170], bar: [300,200,250], pie: [40,35,25], scatter: [3,5,8,13,17], bubble: [100,200,150], radar: [80,90,70,85,75], box: [120,130,125,140,135], area: 300},
+      2: {line: [110,115,160,120,180], bar: [280,220,270], pie: [45,30,25], scatter: [4,6,9,12,18], bubble: [90,220,140], radar: [82,88,75,83,77], box: [125,135,120,145,130], area: 350},
+      3: {line: [120,130,170,140,190], bar: [310,210,260], pie: [42,33,25], scatter: [5,7,10,11,19], bubble: [95,230,160], radar: [85,87,73,82,79], box: [130,140,135,150,145], area: 400},
+      4: {line: [130,140,180,150,200], bar: [320,230,280], pie: [38,37,25], scatter: [6,8,11,14,20], bubble: [105,240,170], radar: [88,85,78,80,80], box: [135,145,140,155,150], area: 450},
+      5: {line: [140,150,190,160,210], bar: [330,240,290], pie: [36,39,25], scatter: [7,9,12,15,22], bubble: [110,250,180], radar: [90,83,80,78,82], box: [140,150,145,160,155], area: 500},
+    };
+
+    const monthSelector = document.getElementById("monthSelector");
+    monthSelector.addEventListener("change", function () {
+      const month = +this.value;
+      updateCharts(month);
+    });
+
+    function updateCharts(month) {
+      const data = monthlyData[month];
+
+      Plotly.react('lineChart', [{
+        x: ['週一','週二','週三','週四','週五'],
+        y: data.line,
+        type: 'scatter', mode: 'lines+markers', name: `第${month}月銷售`
+      }]);
+
+      Plotly.react('barChart', [{
+        x: ['北區','中區','南區'],
+        y: data.bar,
+        type: 'bar', name: '業績'
+      }]);
+
+      Plotly.react('pieChart', [{
+        values: data.pie,
+        labels: ['品牌A','品牌B','品牌C'],
+        type: 'pie'
+      }]);
+
+      Plotly.react('scatterChart', [{
+        x: [20,30,40,50,60],
+        y: data.scatter,
+        mode: 'markers', type: 'scatter', name: '顧客數'
+      }]);
+
+      Plotly.react('bubbleChart', [{
+        x: ['商品A','商品B','商品C'],
+        y: data.bubble,
+        text: ['A','B','C'],
+        mode: 'markers',
+        marker: { size: data.bubble }
+      }]);
+
+      Plotly.react('radarChart', [{
+        type: 'scatterpolar',
+        r: data.radar,
+        theta: ['效率','準確度','溝通','反應','創新'],
+        fill: 'toself', name: 'KPI'
+      }], {
+        polar: {
+          radialaxis: { visible: true, range: [0,100] }
+        }
+      });
+
+      Plotly.react('boxChart', [{
+        y: data.box,
+        type: 'box', name: '價格'
+      }]);
+
+      Plotly.react('areaChart', [{
+        x: ['1月','2月','3月','4月','5月'],
+        y: [300, 350, 400, 450, 500].map((v,i)=>i+1===month?data.area:data.area-50),
+        fill: 'tozeroy', type: 'scatter', name: '營收'
+      }]);
+    }
+
+    updateCharts(1);
+  </script>
+</body>
+</html>

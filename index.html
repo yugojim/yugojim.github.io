@@ -11,8 +11,8 @@
   <header class="flex justify-between items-center p-6 bg-gray-800">
     <div class="text-2xl font-bold">DataNova</div>
     <nav class="space-x-6 hidden md:block">
-      <a href="#about" class="hover:text-blue-400">關於我們</a>
-      <a href="#services" class="hover:text-blue-400">服務項目</a>
+	  <a href="project-example.html" target="_blank" class="underline text-blue-400 hover:text-blue-600">客戶專案</a>
+      <a href="plot.html" target="_blank" class="underline text-blue-400 hover:text-blue-600">專案展示</a>
 	  <a href="pricing.html" class="text-blue-400 font-bold">收費標準</a>
       <a href="#solutions" class="hover:text-blue-400">解決方案</a>
       <a href="#contact" class="hover:text-blue-400">聯絡我們</a>
@@ -128,15 +128,19 @@ function toggleStep(id) {
 
 
   <!-- 聯絡我們 -->
-  <section id="contact" class="py-16 px-6 md:px-24 bg-gray-900">
-    <h2 class="text-3xl font-bold mb-8">聯絡我們</h2>
-    <form class="space-y-4 max-w-xl mx-auto">
-      <input class="w-full px-4 py-2 rounded bg-gray-700 text-white" type="text" placeholder="姓名">
-      <input class="w-full px-4 py-2 rounded bg-gray-700 text-white" type="email" placeholder="Email">
-      <textarea class="w-full px-4 py-2 rounded bg-gray-700 text-white" rows="4" placeholder="您的需求"></textarea>
-      <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded font-semibold">送出</button>
-    </form>
-  </section>
+<section id="contact" class="py-16 px-6 md:px-24 bg-gray-900 text-white">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">聯絡我們</h2>
+    <p class="text-lg text-gray-300 mb-6">有任何問題或需要服務諮詢？點擊下方按鈕，立即與我們聯繫！</p>
+    <a href="mailto:yugojim@gmail.com?subject=服務諮詢&body=您好，%0D%0A我想諮詢有關服務的細節，請問以下時間是否方便聯絡：%0D%0A- 方便聯絡時間：（請填寫您的方便時間，例如週一上午9點至11點）%0D%0A- 我的Line ID：（請填寫您的Line ID）%0D%0A期待您的回覆，謝謝！" 
+       class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+      點擊寄送服務諮詢
+    </a>
+  </div>
+</section>
+
+<!-- 引入 Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
   <!-- Footer -->
   <footer class="text-center p-6 bg-gray-800 text-gray-400">

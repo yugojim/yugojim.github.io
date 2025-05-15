@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TAIBO Medical Products</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #004080;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0066cc;
+    }
+
+    .section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .product-card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 1rem 0;
+      color: #004080;
+    }
+
+    .principle, .chart, .journal {
+      background-color: #eef6ff;
+      border-left: 4px solid #004080;
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+      border-radius: 6px;
+    }
+
+    .chart img {
+      max-width: 100%;
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .product-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TAIBO Medical Supply</h1>
+    <p>Amniotic Medical Products</p>
+  </header>
+
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="products.html">Products</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <section class="section">
+    <h2>Our Amniotic Medical Products</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200?text=Amniotic+Membrane" alt="Amniotic Membrane">
+        <h3>Amniotic Membrane Grafts</h3>
+        <p>High-quality grafts designed for wound healing and surgical applications, promoting tissue regeneration and reducing inflammation.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200?text=Amniotic+Fluid" alt="Amniotic Fluid">
+        <h3>Amniotic Fluid Products</h3>
+        <p>Advanced solutions for orthopedic and regenerative medicine, supporting joint health and tissue repair.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200?text=Dual-Layer+Membrane" alt="Dual-Layer Membrane">
+        <h3>Dual-Layer Amniotic Membranes</h3>
+        <p>Innovative dual-layer membranes for enhanced healing in chronic wounds, such as diabetic foot ulcers.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <h3>How It Works – Scientific Principle</h3>
+      <p>Amniotic tissues contain a rich source of growth factors, cytokines, and extracellular matrix proteins that promote regeneration, reduce inflammation, and prevent scarring. These components support cellular migration and proliferation, accelerating wound healing in chronic or complex injuries.</p>
+    </div>
+
+    <div class="chart">
+      <h3>Clinical Efficacy Comparison</h3>
+      <p>The chart below illustrates a typical healing trajectory of diabetic foot ulcers using amniotic membrane versus traditional treatment:</p>
+      <img src="https://via.placeholder.com/800x400?text=Healing+Comparison+Chart" alt="Healing Comparison Chart">
+    </div>
+
+    <div class="journal">
+      <h3>Referenced NIH Research</h3>
+      <p>Clinical studies published in peer-reviewed journals have demonstrated the benefits of amniotic therapies. For example:</p>
+      <p>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6073404/" target="_blank">
+          “Clinical Application of Amniotic Membrane in Wound Healing” – NIH NCBI (PMC6073404)
+        </a>
+      </p>
+      <p>This study highlights significant reduction in healing time, infection rate, and improved patient satisfaction using amniotic membrane grafts.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TAIBO Medical Supply. All rights reserved.</p>
+  </footer>
+</body>
+</html>

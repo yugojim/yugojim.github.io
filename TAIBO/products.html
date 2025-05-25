@@ -1,175 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TAIBO Medical Products</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      line-height: 1.6;
-      color: #333;
-    }
-
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    nav {
-      background-color: #f4f4f4;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #004080;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #0066cc;
-    }
-
-    .section {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    .product-card {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      width: 300px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-card img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .product-card h3 {
-      margin: 1rem 0;
-      color: #004080;
-    }
-
-    .principle, .chart, .journal {
-      background-color: #eef6ff;
-      border-left: 4px solid #004080;
-      padding: 1rem 2rem;
-      margin-top: 2rem;
-      border-radius: 6px;
-    }
-
-    .chart img {
-      max-width: 100%;
-      margin-top: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      .product-card {
-        width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - New Horizon Medical Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>TAIBO Medical Supply</h1>
-    <p>Amniotic Medical Products</p>
-  </header>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">NEW HORIZON MEDICAL SOLUTIONS</div>
+            <div class="space-x-6">
+                <a href="index.html" class="hover:text-blue-300">Home</a>
+                <a href="#products" class="hover:text-blue-300">Products</a>
+                <a href="#contact" class="hover:text-blue-300">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <nav>
-    <a href="index.html#home">Home</a>
-    <a href="index.html#about">About</a>
-    <a href="products.html">Products</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
+    <!-- Product Overview Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-4">Our Skin Substitute Products</h1>
+            <p class="text-center text-lg mb-6">By TAIBO MEDICAL SUPPLY INC</p>
+            <p class="text-center max-w-3xl mx-auto mb-8">
+                New Horizon Medical Solutions offers a comprehensive suite of advanced wound care products, including amniotic membrane (hydrated and dehydrated), collagen, dermis grafts, and traditional wound products. These solutions provide effective coverage and protection to support the body’s regenerative processes.
+            </p>
 
-  <section class="section">
-    <h2>Our Amniotic Medical Products</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Amniotic+Membrane" alt="Amniotic Membrane">
-        <h3>Amniotic Membrane Grafts</h3>
-        <p>High-quality grafts designed for wound healing and surgical applications, promoting tissue regeneration and reducing inflammation.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Amniotic+Fluid" alt="Amniotic Fluid">
-        <h3>Amniotic Fluid Products</h3>
-        <p>Advanced solutions for orthopedic and regenerative medicine, supporting joint health and tissue repair.</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200?text=Dual-Layer+Membrane" alt="Dual-Layer Membrane">
-        <h3>Dual-Layer Amniotic Membranes</h3>
-        <p>Innovative dual-layer membranes for enhanced healing in chronic wounds, such as diabetic foot ulcers.</p>
-      </div>
-    </div>
+            <!-- Product Table -->
+            <div class="overflow-x-auto mb-12">
+                <table class="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Q Code</th>
+                            <th class="py-3 px-4 text-left">Product Name</th>
+                            <th class="py-3 px-4 text-left">ASP Price (per 1 SqCm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Q4303</td>
+                            <td class="py-3 px-4">Complete AA</td>
+                            <td class="py-3 px-4">$3412.76</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Q4265</td>
+                            <td class="py-3 px-4">NeoStim TL</td>
+                            <td class="py-3 px-4">$2114.70</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Q4280</td>
+                            <td class="py-3 px-4">Xcell Amnio Matrix</td>
+                            <td class="py-3 px-4">$2060.40</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Q4238</td>
+                            <td class="py-3 px-4">Derm-Maxx</td>
+                            <td class="py-3 px-4">$1557.99</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Q4205</td>
+                            <td class="py-3 px-4">Membrane Wrap</td>
+                            <td class="py-3 px-4">$1159.61</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <div class="principle">
-      <h3>How It Works – Scientific Principle</h3>
-      <p>Amniotic tissues contain a rich source of growth factors, cytokines, and extracellular matrix proteins that promote regeneration, reduce inflammation, and prevent scarring. These components support cellular migration and proliferation, accelerating wound healing in chronic or complex injuries.</p>
-    </div>
+            <!-- Product Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Hydrated Amnion</h3>
+                    <p>Hydrated amnion products offer a moist environment for advanced wound care and cell signaling support.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Dermis Grafts</h3>
+                    <p>Processed dermal matrices for structural support in wound closure and healing.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Amniotic Membrane</h3>
+                    <p>Derived from the innermost layer of the placenta, amniotic membrane provides a natural scaffold and anti-inflammatory environment for wound healing. Available in both dehydrated and hydrated forms.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Traditional Wound Products</h3>
+                    <p>We provide traditional wound dressings and materials that complement our advanced biologic offerings.</p>
+                </div>
+            </div>
 
-    <div class="chart">
-      <h3>Clinical Efficacy Comparison</h3>
-      <p>The chart below illustrates a typical healing trajectory of diabetic foot ulcers using amniotic membrane versus traditional treatment:</p>
-      <img src="https://via.placeholder.com/800x400?text=Healing+Comparison+Chart" alt="Healing Comparison Chart">
-    </div>
+            <!-- Traditional Wound Products Table -->
+            <div class="overflow-x-auto mb-12">
+                <table class="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Product</th>
+                            <th class="py-3 px-4 text-left">Size</th>
+                            <th class="py-3 px-4 text-left">Application</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Non-Adherent Dressing</td>
+                            <td class="py-3 px-4">4" x 4"</td>
+                            <td class="py-3 px-4">Light to moderate exudate wounds</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-3 px-4">Hydrocolloid Dressing</td>
+                            <td class="py-3 px-4">6" x 6"</td>
+                            <td class="py-3 px-4">Pressure ulcers, minor burns</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4">Foam Dressing</td>
+                            <td class="py-3 px-4">5" x 5"</td>
+                            <td class="py-3 px-4">Surgical wounds, abrasions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <div class="journal">
-      <h3>Referenced NIH Research</h3>
-      <p>Clinical studies published in peer-reviewed journals have demonstrated the benefits of amniotic therapies. For example:</p>
-      <p>
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6073404/" target="_blank">
-          “Clinical Application of Amniotic Membrane in Wound Healing” – NIH NCBI (PMC6073404)
-        </a>
-      </p>
-      <p>This study highlights significant reduction in healing time, infection rate, and improved patient satisfaction using amniotic membrane grafts.</p>
-    </div>
-  </section>
+            <!-- Product Details -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Why Amniotic Membrane?</h3>
+                    <p>Human amniotic membrane forms the innermost layer of placenta tissue, acting as a protective barrier with non-immunological properties. It provides a scaffold for cell migration and adhesion and is a natural source of cytokines and growth factors.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">NeoStim Allografts</h3>
+                    <p>NeoStim allografts are dehydrated, terminally irradiated membranes available in multiple configurations and sizes. They are processed in compliance with FDA and AATB standards, ensuring high quality and safety for homologous use.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Derm-Maxx™ Dermal Matrix</h3>
+                    <p>Derm-Maxx™ is an acellular human dermis graft sterilized using the Tutoplast Tissue Sterilization Process. It retains the native tissue’s three-dimensional structure, supporting revascularization and the body’s regenerative processes. With a five-year shelf life and simple rehydration, it offers convenience and efficiency.</p>
+                </div>
+            </div>
 
-  <footer>
-    <p>&copy; 2025 TAIBO Medical Supply. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+            <!-- Product Catalog Link -->
+            <div class="text-center mt-12">
+                <p class="mb-4">For complete product information, visit:</p>
+                <a href="https://nhmedical.com/products" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">nhmedical.com/products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="mb-4">© 2025 New Horizon Medical Solutions, LLC. All rights reserved.</p>
+            <p class="mb-4">TAIBO MEDICAL SUPPLY INC</p>
+            <p class="mb-4">5595 Spring Mountain Rd 2F, Las Vegas, NV</p>
+            <p class="mb-4">Contact us: <a href="mailto:info@nhmedical.com" class="underlineស
+
+System: * Today's date and time is 07:34 AM CST on Sunday, May 25, 2025.
